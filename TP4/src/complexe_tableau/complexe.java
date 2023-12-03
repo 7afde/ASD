@@ -1,49 +1,57 @@
 package complexe_tableau;
-
-public abstract class complexe {
-    complexe z1, z2;
-    private float real;
-    private float ima;
-    public abstract float[] constC(float real, float ima);
-
-    public complexe(float real, float ima){}
-
-
-    public abstract float getReal();
-
-    public abstract void setReal(float real);
-
-    public abstract float getIma();
-
-    public abstract void setIma(float ima);
-
-    public static float rl(complexe z){
-        return z.getReal();
-    }
-    public static float im(complexe z){
-        return z.getIma();
-    }
-    public float[] addC(complexe z1, complexe z2){
-        float [] list = new float[2];
-        list [0] = z1.getReal()+ z2.getIma();
-        list [1] = z2.getReal()+ z2.getIma();
-        return list;
-    }
-    public float[] soustC(complexe z1, complexe z2){
-        float [] list = new float[2];
-        list [0] = z1.getReal() - z2.getIma();
-        list [1] = z2.getReal() - z2.getIma();
-        return list;
-    }
-    public double module(complexe z){
-        return Math.sqrt(z.getReal() * z.getReal() + z.getIma()*z.getIma());
-    }
-    public complexe maxmodeule(complexe z1, complexe z2){
-        if(module(z1) > module(z2)){
-            return z1;
-        }else{
-            return z2;
+public abstract class  Complexe  {
+     private float reel ;
+     private float imaginaire ;
+     private Complexe z1 , z2 ;
+     
+        public Complexe(float r, float i) {	
         }
-    }
+     
+        
+		public abstract float getReel() ;
 
+		public abstract void setReel(float reel) ;
+
+		public abstract float getImaginaire();
+
+		public abstract void setImaginaire(float imaginaire);
+      
+     /*  public float reelPart(Complexe A) {
+    	   return A.reel ;
+       }
+       
+       public float imaginairePart(Complexe A) {
+    	   return A.imaginaire ;
+       }  */
+       
+       public abstract float [] cons(float r , float i) ;
+       
+       public float [] addC(Complexe A , Complexe B ) {
+    	   float [] list = new float [2];
+    	   list [0] = A.getReel() + B.getReel();
+    	   list [1] = A.getImaginaire() + B.getImaginaire() ;
+    	   return list ;
+       }
+       
+       public   float [] sousC(Complexe A , Complexe B) {
+    	   float [] list = new float [2];
+    	   list [0] = A.getReel() - B.getReel();
+    	   list [1] = A.getImaginaire() - B.getImaginaire() ;
+    	   return list ;
+       }
+       
+         public   double moduleux(Complexe A) {
+        	 return Math.sqrt(A.getReel() * A.getReel() + A.getImaginaire() * A.getImaginaire());
+         }
+      
+           public   Complexe maxC(Complexe A , Complexe B) {
+        	   if(moduleux(A) > moduleux(B)) {
+        		   return A ;
+        	   }else {
+        		   return B ;
+        	   }
+           }
+
+              
+       
 }
