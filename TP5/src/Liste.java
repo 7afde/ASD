@@ -66,5 +66,43 @@ public class Liste {
     public boolean estVide(Liste L){
         return L == listeVide();
     }
+    public Element Queue(Liste L){
+        int lon = 0;
+        for (int i = 0; i < L.longueur_liste; i++){
+            lon = i;
+        }
+        return acces(L,lon);
+    }
+    public Liste Concatener(Liste L1, Liste L2) {
+        Liste L = new Liste();
+        int p = L1.longueur_liste;
+
+        if (p + L2.longueur_liste <= LMAX) {
+            L.longueur_liste = p + L2.longueur_liste;
+
+            for (int i = 0; i < p; i++) {
+                L.tab[i] = L1.tab[i];
+            }
+
+            for (int j = 0; j < L2.longueur_liste; j++) {
+                L.tab[p + j] = L2.tab[j];
+            }
+
+        }
+        return L;
+    }
+    public Liste inverse(Liste L) {
+        int length = L.longueur_liste;
+
+        for (int i = 0; i < length / 2; i++) {
+            int j = length - 1 - i;
+
+            Element temp = L.tab[i];
+            L.tab[i] = L.tab[j];
+            L.tab[j] = temp;
+        }
+        return L;
+    }
+
 
 }
