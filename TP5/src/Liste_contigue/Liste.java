@@ -1,3 +1,5 @@
+package Liste_contigue;
+
 public class Liste {
     private static final int LMAX=10000 ;
     private Element tab[] ;

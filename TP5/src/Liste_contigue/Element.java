@@ -1,3 +1,5 @@
+package Liste_contigue;
+
 public class Element {
     private int id;
 

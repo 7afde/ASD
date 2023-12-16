@@ -1,3 +1,7 @@
+package Liste_contigue;
+
+import Liste_contigue.Element;
+
 import java.util.Scanner;
 public class Test {
 
