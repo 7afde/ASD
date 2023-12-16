@@ -3,6 +3,9 @@ package Liste_contigue;
 import Liste_contigue.Element;
 
 import java.util.Scanner;
+
+import static Liste_contigue.Liste.LMAX;
+
 public class Test {
 
     public static Liste creationListe(Liste L){
@@ -28,7 +31,19 @@ public class Test {
         Liste liste3 = new Liste();
         creationListe(liste1);
         creationListe(liste2);
+        if (liste1.estVide(liste1)){
+            System.out.println("le résultat de la concaténation est : ");
+            affichageListe(liste2);
+        }
+        else if (liste2.estVide(liste2)){
+            System.out.println("le résultat de la concaténation est : ");
+            affichageListe(liste1);
+        }
+        else if (liste1.getLongueur_liste()+liste2.getLongueur_liste() > LMAX) {
+            System.out.println("la concaténation est impossible");
+        }
         Liste max = liste3.Concatener(liste1,liste2);
+        System.out.println("La conatenation de 2 listes est : ");
         affichageListe(max);
         System.out.println("final element is :"+max.Queue(max).getId());
         Liste inverse = max.inverse(max);

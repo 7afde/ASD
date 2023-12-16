@@ -1,9 +1,10 @@
 package Liste_contigue;
 
 public class Liste {
-    private static final int LMAX=10000 ;
+    public static final int LMAX=10000 ;
     private Element tab[] ;
     private int p ;
+
     private int longueur_liste;
     public Liste() {
         this.tab = new Element[LMAX];
