@@ -1,4 +1,4 @@
-package Liste_contigue;
+package Liste_abstract;
 
 
 import java.util.Scanner;
@@ -22,6 +22,19 @@ public class Test {
         for(int i = 0; i < L.longuer_iter(L); i++){
             System.out.println(L.acces(L,i).getId());
         }
+    }
+    public static Liste creationListeEtudiant(Liste L) {
+        int i;
+        L.listeVide();
+        System.out.println("svpp entrez la taille de cette liste d'etudiants");
+        Scanner scan = new Scanner(System.in);
+        int N = scan.nextInt();
+        for (i = 0; i < N; i++) {
+            System.out.println("entre le NCarte , le nom , le prenom ,la date de naissance et l'adresse ");
+            Etudiant e = new Etudiant(scan.nextInt(), scan.nextLine(), scan.nextLine(),scan.nextInt(),scan.nextLine());
+            L.inserer(L, i, e);
+        }
+        return L;
     }
 
     public static void main(String[] args){
